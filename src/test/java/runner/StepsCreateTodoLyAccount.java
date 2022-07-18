@@ -1,48 +1,59 @@
 package runner;
 
+import browser.WebBrowserSession;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.jupiter.api.Assertions;
+import pages.AccountHomePage;
+import pages.SignupModal;
+import pages.TodoLyHomePage;
 
 public class StepsCreateTodoLyAccount {
+
+    TodoLyHomePage todoLyHomePage = new TodoLyHomePage();
+    SignupModal signupModal = new SignupModal();
+    AccountHomePage accountHomePage =  new AccountHomePage();
+
     @Given("the user access {string} url")
     public void theUserAccessUrl(String url) {
+        WebBrowserSession.getInstance().getBrowser().get(url);
     }
 
-    @When("user click on Sign Un Free button")
+    @And("user click on Sign Un Free button")
     public void userClickOnSignUnFreeButton() {
-    }
-
-    @Then("Signup modal is displayed")
-    public void signupModalIsDisplayed() {
+        todoLyHomePage.signUpFree.click();
     }
 
     @When("user enter the name {string} on Full Name field")
     public void userEnterTheNameOnFullNameField(String user_name) {
+        signupModal.user_nameTxTBox.writeText(user_name);
     }
 
     @And("enters the email {string} on Email field")
     public void entersTheEmailOnEmailField(String email_address) {
+        signupModal.emailTxtBox.writeText(email_address);
     }
 
     @And("enters the password {string} on Password field")
     public void entersThePasswordOnPasswordField(String password) {
+        signupModal.passwordTxtBox.writeText(password);
     }
 
     @And("checks the Terms of Service agreement checkbox")
     public void checksTheTermsOfServiceAgreementCheckbox() {
+        signupModal.checkboxChkBox.click();
     }
 
     @And("click on Signup on the modal")
     public void clickOnSignupOnTheModal() {
+        signupModal.signupButton.click();
     }
 
-    @Then("the new account is created and logged in")
+    @Then("user is logged in and account home page is displayed")
     public void theNewAccountIsCreatedAndLoggedIn() {
-    }
-
-    @And("home page for the new user is displayed")
-    public void homePageForTheNewUserIsDisplayed() {
+        Assertions.assertTrue(accountHomePage.main_content_panel.isElementDisplayed(), "ERROR, Account not created");
+        Assertions.assertTrue(accountHomePage.logout_link.isElementDisplayed(), "ERROR: Account not created");
     }
 }
