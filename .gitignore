@@ -10,6 +10,9 @@ gradlew.bat
 node_modules/
 dist/
 
+#Java compiled class files folder
+build/
+
 # Compiled Java class files
 *.class
 
