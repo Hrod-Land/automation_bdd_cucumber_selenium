@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import pages.AccountHomePage;
+import pages.AccountSettingsModal;
 import pages.SignupModal;
 import pages.TodoLyHomePage;
 
@@ -15,6 +16,13 @@ public class StepsCreateTodoLyAccount {
     TodoLyHomePage todoLyHomePage = new TodoLyHomePage();
     SignupModal signupModal = new SignupModal();
     AccountHomePage accountHomePage =  new AccountHomePage();
+    AccountSettingsModal accountSettingsModal = new AccountSettingsModal();
+
+
+//    private void cleanup(){
+//        accountHomePage.settings_link.click();
+//        accountSettingsModal.account_tab.click();
+//    }
 
     @Given("the user access {string} url")
     public void theUserAccessUrl(String url) {
@@ -51,7 +59,7 @@ public class StepsCreateTodoLyAccount {
         signupModal.signupButton.click();
     }
 
-    @Then("user is logged in and account home page is displayed")
+    @Then("account home page is displayed")
     public void theNewAccountIsCreatedAndLoggedIn() {
         Assertions.assertTrue(accountHomePage.main_content_panel.isElementDisplayed(), "ERROR, Account not created");
         Assertions.assertTrue(accountHomePage.logout_link.isElementDisplayed(), "ERROR: Account not created");
