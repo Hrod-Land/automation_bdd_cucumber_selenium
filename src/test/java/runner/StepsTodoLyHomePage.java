@@ -11,7 +11,7 @@ public class StepsTodoLyHomePage {
 
     @Then("todo.ly home page is displayed")
     public void todoLyHomePageIsDisplayed() {
-        todoLyHomePage.todoLy_NotAuthenticatedMainPanel.isElementDisplayed();
+        todoLyHomePage.todoLyNotAuthenticatedMainView_panel.isElementDisplayed();
     }
 
     @When("user click on Login button")

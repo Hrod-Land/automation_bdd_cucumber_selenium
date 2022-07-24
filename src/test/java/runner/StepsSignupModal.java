@@ -2,11 +2,14 @@ package runner;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
+import org.junit.jupiter.api.Assertions;
+import pages.AccountHomePage;
 import pages.SignupModal;
 
 public class StepsSignupModal {
 
     SignupModal signupModal = new SignupModal();
+    AccountHomePage accountHomePage = new AccountHomePage();
 
     @When("user enters the {string} on Full Name field")
     public void userEntersTheOnFullNameField(String user_name) {
@@ -31,5 +34,6 @@ public class StepsSignupModal {
     @And("click on Signup on the modal")
     public void clickOnSignupOnTheModal() {
         signupModal.signupButton.click();
+        Assertions.assertTrue(accountHomePage.main_content_panel.isElementDisplayed());
     }
 }

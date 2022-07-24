@@ -12,4 +12,10 @@ public class TextBox extends GraphElement{
         webElement.clear();
         webElement.sendKeys(value);
     }
+
+    public String getText(){
+        findElement();
+        return webElement.getText();
+    }
+
 }
