@@ -1,7 +1,11 @@
 Feature: Todo-ly account
 
-  Scenario Outline: As an end user I want to create an account in todo.ly
+  Background:
     Given the user accesses "http://todo.ly" url
+
+
+  @bvt
+  Scenario Outline: As an end user I want to create an account in todo.ly
     And user click on Sign Un Free button
     When user enters the "<user name>" on Full Name field
     And enters the "<email>" on Email field
@@ -13,8 +17,9 @@ Feature: Todo-ly account
       | user name | email            | password |
       | rolando   | rolando3@mam.com | 123456   |
 
+
+  @bvt
   Scenario Outline: As an end user I want to changes todo.ly account password
-    Given the user accesses "http://todo.ly" url
     When user click on Login button
     And enters "<email>" and "<password>" in Login modal
     And click Login on the modal
@@ -35,8 +40,9 @@ Feature: Todo-ly account
       | rolando3@mam.com | 123456   | 123456       | 456789       |
       | rolando3@mam.com | 456789   | 456789       | 123456       |
 
+
+  @bvt
   Scenario Outline: As an end user I want to delete a todo.ly user account
-    Given the user accesses "http://todo.ly" url
     When user click on Login button
     And enters "<email>" and "<password>" in Login modal
     And click Login on the modal
