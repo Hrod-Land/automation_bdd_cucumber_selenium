@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import pages.AccountHomePage;
-import pages.AccountSettingsModal;
+import pages.SettingsModal;
 import pages.SignupModal;
 import pages.TodoLyHomePage;
 
@@ -16,7 +16,7 @@ public class StepsCreateTodoLyAccount {
     TodoLyHomePage todoLyHomePage = new TodoLyHomePage();
     SignupModal signupModal = new SignupModal();
     AccountHomePage accountHomePage =  new AccountHomePage();
-    AccountSettingsModal accountSettingsModal = new AccountSettingsModal();
+    SettingsModal accountSettingsModal = new SettingsModal();
 
 
 //    private void cleanup(){
@@ -24,7 +24,7 @@ public class StepsCreateTodoLyAccount {
 //        accountSettingsModal.account_tab.click();
 //    }
 
-    @Given("the user access {string} url")
+    @Given("the user accesses {string} url")
     public void theUserAccessUrl(String url) {
         WebBrowserSession.getInstance().getBrowser().get(url);
     }
