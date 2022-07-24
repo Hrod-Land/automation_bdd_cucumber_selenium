@@ -33,10 +33,6 @@ Feature: Todo-ly account
     Examples:
       | email            | password | old password | new password |
       | rolando3@mam.com | 123456   | 123456       | 456789       |
-      | rolando3@mam.com | 456789   | 456789       | abcdef       |
-      | rolando3@mam.com | abcdef   | abcdef       | qwerty       |
-      | rolando3@mam.com | qwerty   | qwerty       | 123456       |
-      | rolando3@mam.com | 123456   | 123456       | 456789       |
       | rolando3@mam.com | 456789   | 456789       | 123456       |
 
   Scenario Outline: As an end user I want to delete a todo.ly user account
