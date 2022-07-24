@@ -34,18 +34,18 @@ public class StepsCreateTodoLyAccount {
         todoLyHomePage.signUpFree.click();
     }
 
-    @When("user enter the name {string} on Full Name field")
-    public void userEnterTheNameOnFullNameField(String user_name) {
+    @When("user enters the {string} on Full Name field")
+    public void userEntersTheOnFullNameField(String user_name) {
         signupModal.user_nameTxTBox.writeText(user_name);
     }
 
-    @And("enters the email {string} on Email field")
-    public void entersTheEmailOnEmailField(String email_address) {
-        signupModal.emailTxtBox.writeText(email_address);
+    @And("enters the {string} on Email field")
+    public void entersTheOnEmailField(String email) {
+        signupModal.emailTxtBox.writeText(email);
     }
 
-    @And("enters the password {string} on Password field")
-    public void entersThePasswordOnPasswordField(String password) {
+    @And("enters the {string} on Password field")
+    public void entersTheOnPasswordField(String password) {
         signupModal.passwordTxtBox.writeText(password);
     }
 

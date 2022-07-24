@@ -1,14 +1,17 @@
 Feature: Todo-ly account
 
-  Scenario: As an end user I want to create an account in todo.ly
+  Scenario Outline: As an end user I want to create an account in todo.ly
     Given the user accesses "http://todo.ly" url
     And user click on Sign Un Free button
-    When user enter the name "rolando3" on Full Name field
-    And enters the email "rolando3@mam.com" on Email field
-    And enters the password "123456" on Password field
+    When user enters the "<user name>" on Full Name field
+    And enters the "<email>" on Email field
+    And enters the "<password>" on Password field
     And checks the Terms of Service agreement checkbox
     And click on Signup on the modal
     Then account home page is displayed
+    Examples:
+      | user name | email            | password |
+      | rolando   | rolando3@mam.com | 123456   |
 
   Scenario Outline: As an end user I want to changes todo.ly account password
     Given the user accesses "http://todo.ly" url
