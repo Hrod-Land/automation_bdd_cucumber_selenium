@@ -4,6 +4,6 @@ import core.Tab;
 import org.openqa.selenium.By;
 
 public class SettingsModal {
-    public Tab profile_tab = new Tab(By.xpath("//*[@id='settings_tabs']/li/a[@href='#settings_Profile']"));
-    public Tab account_tab = new Tab(By.xpath("//*[@class='ui-state-default ui-corner-top ui-tabs-selected ui-state-active']"));
+    public Tab profile_tab = new Tab(By.xpath("//*[@id=\"settings_tabs\"]/li[1]/a"));
+    public Tab account_tab = new Tab(By.xpath("//*[@id=\"settings_tabs\"]/li[5]/a"));
 }

@@ -38,3 +38,18 @@ Feature: Todo-ly account
       | rolando3@mam.com | qwerty   | qwerty       | 123456       |
       | rolando3@mam.com | 123456   | 123456       | 456789       |
       | rolando3@mam.com | 456789   | 456789       | 123456       |
+
+  Scenario Outline: As an end user I want to delete a todo.ly user account
+    Given the user accesses "http://todo.ly" url
+    When user click on Login button
+    And enters "<email>" and "<password>" in Login modal
+    And click Login on the modal
+    Then account home page is displayed
+    When user access to Settings modal
+    And accesses to Account tab in the Settings modal
+    And click on Delete Account with All Data button in Settings modal
+    And click on OK button of browser alert displayed
+    Then todo.ly home page is displayed
+    Examples:
+      | email            | password |
+      | rolando3@mam.com | 123456   |
