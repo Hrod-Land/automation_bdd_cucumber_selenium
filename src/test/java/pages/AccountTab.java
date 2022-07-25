@@ -8,8 +8,7 @@ import org.openqa.selenium.WebDriver;
 
 public class AccountTab {
 
-    public Panel settingsAccount_panel = new Panel(By.xpath("//div[@id='settings_Account']"));//id =settings_Account
+    public Panel settingsAccount_panel = new Panel(By.id("settings_Account"));//(By.xpath("//div[@id='settings_Account']"));//id =settings_Account
     public Button delete_account_button = new Button(By.id("DeleteAccountBtn"));
-    //Switch to web browser alert and accept
 
 }
