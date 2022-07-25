@@ -3,7 +3,7 @@ Feature: Todo-ly account
   Background:
     Given the user accesses "http://todo.ly" url
 
-  @bvt
+  @bvt @createAccount
   Scenario Outline: As an end user I want to create an account in todo.ly
     # Test Steps
     And user click on Sign Un Free button
@@ -26,14 +26,14 @@ Feature: Todo-ly account
     And click on OK button of browser alert displayed
     Then todo.ly home page is displayed
     Examples:
-      | user name        | email               | password |
-      | rolando          | rolando4@mam.com    | 123456   |
-      | rolando          | rolandoFL3@mam.com  | <hjhj>   |
-      | rolando mam !@#$ | rolando5-d@mam.com  | asdf123  |
-      | rolando_mam      | rolando5.d5@mam.com | !@#$%$   |
-      | rolando-mam      | rolando_5@mam.com   | as       |
+      | user name        | email                | password |
+      | rolando          | rolandoc1@mam.com    | 123456   |
+      | rolando          | rolandoFL5@mam.com   | hjhj     |
+      | rolando mam !@#$ | rolandoc1-d@mam.com  | asdf123  |
+      | rolando_mam      | rolandoc1.d5@mam.com | !@#$%$   |
+      | rolando-mam      | rolandoc1_5@mam.com  | as       |
 
-  @bvt
+  @bvt @changePassword
   Scenario Outline: As an end user I want to changes todo.ly account password
     # Setup data -> Needs to be improved by refactor
     And user click on Sign Un Free button
@@ -62,13 +62,13 @@ Feature: Todo-ly account
     And click on OK button of browser alert displayed
     Then todo.ly home page is displayed
     Examples:
-      | email            | password   | old password | new password                                                             |
-      | rolando4@mam.com | 123asd#$%^ | 123asd#$%^   | 456789                                                                   |
-      | rolando4@mam.com | 123456     | 123456       | 123asd#$%^                                                               |
-      | rolando4@mam.com | 123456     | 123456       | sp                                                                       |
-      | rolando4@mam.com | a          | a            | longpasslongpasslongpasslongpasslongpasslongpasslongpasslongpasslongpass |
+      | email              | password   | old password | new password                                                             |
+      | rolandoch1@mam.com | 123asd#$%^ | 123asd#$%^   | 456789                                                                   |
+      | rolandoch2@mam.com | 123456     | 123456       | 123asd#$%^                                                               |
+      | rolandoch3@mam.com | 123456     | 123456       | sp                                                                       |
+      | rolandoch4@mam.com | a          | a            | longpasslongpasslongpasslongpasslongpasslongpasslongpasslongpasslongpass |
 
-  @bvt
+  @bvt @deleteAccount
   Scenario Outline: As an end user I want to delete a todo.ly user account
     # Setup data -> Needs to be improved by refactor
     And user click on Sign Un Free button
@@ -93,9 +93,9 @@ Feature: Todo-ly account
     And enters "<email>" and "<password>" in Login modal
     Then click on login and login modal still displayed
     Examples:
-      | email               | password    |
-      | rolando4@mam.com    | 123abcf@#$% |
-      | rolando5@mam.com    | 123456      |
-      | rolando5-d@mam.com  | @#$#@       |
-      | rolando5.d5@mam.com | a b         |
-      | rolando_5@mam.com   | d           |
+      | email                | password    |
+      | rolandod1@mam.com    | 123abcf@#$% |
+      | rolandod2@mam.com    | 123456      |
+      | rolandod3-d@mam.com  | @#$#@       |
+      | rolandod4.d5@mam.com | a b         |
+      | rolandod5_5@mam.com  | d           |

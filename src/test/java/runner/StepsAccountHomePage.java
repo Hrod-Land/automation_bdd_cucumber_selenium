@@ -4,7 +4,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import pages.AccountHomePage;
-import pages.SettingsModal;
 import pages.TodoLyHomePage;
 
 public class StepsAccountHomePage {

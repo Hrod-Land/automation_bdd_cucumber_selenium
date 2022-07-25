@@ -3,7 +3,6 @@ package core;
 import browser.WebBrowserSession;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-//import session.Session;
 
 public class GraphElement {
 

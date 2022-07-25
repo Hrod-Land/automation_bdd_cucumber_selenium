@@ -2,7 +2,6 @@ package runner;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en_old.Ac;
 import org.junit.jupiter.api.Assertions;
 import pages.*;
 
@@ -28,7 +27,5 @@ public class StepsLogin {
     public void loginModalStillDisplayed() {
         loginModal.loginButton.click();
         Assertions.assertTrue(todoLyHomePage.errorSpan_label.isElementDisplayed());
-//        Assertions.assertTrue(loginModal.loginModal_panel.isElementDisplayed());
-
     }
 }
