@@ -11,7 +11,11 @@ node_modules/
 dist/
 
 #Java compiled class files folder
-build/
+build/classes/
+build/generated/
+build/libs/
+build/resources/
+build/tmp/
 
 # Compiled Java class files
 *.class
